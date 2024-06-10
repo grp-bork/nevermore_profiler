@@ -1,0 +1,87 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://raw.githubusercontent.com/grp-bork/nevermore_profiler/main/nextflow_schema.json",
+    "title": "nevermore_profiler pipeline parameters",
+    "description": "nevermore_profiler JSON schema",
+    "type": "object",
+    "definitions": {
+        "preprocessing": {
+            "title": "preprocessing",
+            "type": "object",
+            "description": "Preprocessing parameters",
+            "default": "",
+            "properties": {
+                "qc_minlen": {
+                    "type": "integer",
+                    "description": "Minimum read length to pass quality control",
+                    "default": 45
+                },
+                "qc_params_shotgun": {
+                    "type": "string",
+                    "description": "bbduk quality control parameters",
+                    "default": "qtrim=rl trimq=3 maq=25 ktrim=r k=23 mink=11 hdist=1 ftm=5 entropy=0.5 entropywindow=50 entropyk=5 tpe tbo"
+                },
+                "remove_host_kraken2_db": {
+                    "type": "boolean",
+                    "description": "Path to a kraken2 database"
+                }
+            },
+            "required": [
+                "qc_minlen",
+                "qc_params_shotgun",
+                "remove_host_kraken2_db"
+            ]
+        },
+        "required": {
+            "title": "Required",
+            "type": "object",
+            "description": "",
+            "default": "",
+            "properties": {
+                "input_dir": {
+                    "type": "directory-path",
+                    "description": "Directory path to fastq files",
+                    "format": "directory-path"
+                },
+                "output_dir": {
+                    "type": "string",
+                    "format": "directory-path",
+                    "description": "Path to output directory"
+                },
+                "database": {
+                    "type": "directory-path",
+                    "description": "Path to annotation database"
+                }
+            },
+            "required": [
+                "input_dir",
+                "output_dir",
+				"database"
+            ]
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "#/definitions/preprocessing"
+        },
+        {
+            "$ref": "#/definitions/required"
+        }
+    ],
+    "properties": {
+        "run_preprocessing": {
+            "type": "boolean",
+            "default": true
+        },
+        "remove_host": {
+            "type": "boolean"
+        },
+        "drop_orphans": {
+            "type": "boolean"
+        },
+        "kraken2_min_hit_groups": {
+            "type": "integer",
+            "default": 10
+        }
+    }
+}
