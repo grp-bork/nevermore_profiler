@@ -22,8 +22,11 @@
                     "default": "qtrim=rl trimq=3 maq=25 ktrim=r k=23 mink=11 hdist=1 ftm=5 entropy=0.5 entropywindow=50 entropyk=5 tpe tbo"
                 },
                 "remove_host_kraken2_db": {
-                    "type": "boolean",
-                    "description": "Path to a kraken2 database"
+                    "type": "string",
+                    "hidden": true,
+                    "format": "directory-path",
+                    "description": "Path to a kraken2 database",
+                    "default": ""
                 }
             },
             "required": [
@@ -39,7 +42,7 @@
             "default": "",
             "properties": {
                 "input_dir": {
-                    "type": "directory-path",
+                    "type": "string",
                     "description": "Directory path to fastq files",
                     "format": "directory-path"
                 },
