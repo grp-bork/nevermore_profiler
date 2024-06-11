@@ -51,7 +51,8 @@
                 "gq_database": {
                     "type": "string",
                     "format": "directory-path",
-                    "description": "Path to annotation database"
+                    "description": "Path to annotation database",
+                    "default": "/vol/data/databases/clowm/CLDB-019002ce2dc470b7954ada9cac392ba2/019002ce2dcb72eb841b786f3c95938d"
                 },
                 "min_identity": {
                     "type": "float",
