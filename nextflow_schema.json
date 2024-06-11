@@ -4,7 +4,7 @@
     "title": "nevermore_profiler pipeline parameters",
     "description": "nevermore_profiler JSON schema",
     "type": "object",
-    "definitions": {
+    "definitions": {    
         "preprocessing": {
             "title": "preprocessing",
             "type": "object",
@@ -48,9 +48,25 @@
                     "format": "directory-path",
                     "description": "Path to output directory"
                 },
-                "database": {
-                    "type": "directory-path",
+                "gq_database": {
+                    "type": "string",
+                    "format": "directory-path",
                     "description": "Path to annotation database"
+                },
+                "min_identity": {
+                    "type": "float",
+                    "description": "minimum sequence identity for alignment to be considered",
+                    "default": 0.97                   
+                },
+                "min_alignment_length": {
+                    "type": "integer",
+                    "description": "minimum length for alignment to be considered",
+                    "default": 45
+                },
+                "single_end_library": {
+                    "type": "boolean",
+                    "description": "input reads are derived from single-end library",
+                    "default": "false",
                 }
             },
             "required": [
