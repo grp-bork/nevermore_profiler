@@ -67,7 +67,7 @@
                 "single_end_library": {
                     "type": "boolean",
                     "description": "input reads are derived from single-end library",
-                    "default": "false",
+                    "default": "false"
                 }
             },
             "required": [
