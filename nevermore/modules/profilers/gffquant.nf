@@ -6,6 +6,7 @@ params.gq_mode = "genes"
 
 process stream_gffquant {
 	label "gffquant"
+	label "process_high"
 	tag "gffquant.${sample}"
 
 	input:
