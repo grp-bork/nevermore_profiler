@@ -56,7 +56,7 @@
                     "format": "directory-path",
                     "description": "Path to annotation database",
                     "hidden": true,
-                    "default": "/vol/data/databases/clowm/CLDB-019002ce2dc470b7954ada9cac392ba2/019002ce2dcb72eb841b786f3c95938d"
+                    "default": "/vol/data/databases/clowm/CLDB-019002ce2dc470b7954ada9cac392ba2/01900c56511972c3abd08b34b10583b6"
                 },
                 "min_identity": {
                     "type": "number",
