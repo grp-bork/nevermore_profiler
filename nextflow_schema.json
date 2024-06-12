@@ -79,8 +79,7 @@
                 "output_dir",
 				"gq_database",
                 "min_identity",
-                "min_alignment_length",
-                "single_end_library"
+                "min_alignment_length"
             ]
         }
     },
