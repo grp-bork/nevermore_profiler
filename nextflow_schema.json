@@ -26,7 +26,7 @@
                     "format": "directory-path",
                     "hidden": true,
                     "description": "Path to a kraken2 database",
-                    "default": "/vol/data/databases/clowm/CLDB-018fde8b0aa373a5ba7d3236bb921cc9/018fde8b0aac74889c57f7b1af5f87cb"
+                    "default": "/vol/data/databases/clowm/CLDB-018fde8b0aa373a5ba7d3236bb921cc9/018fde8b0aac74889c57f7b1af5f87cb/hg38_silva_genome"
                 }
             },
             "required": [
@@ -71,7 +71,7 @@
                 "single_end_library": {
                     "type": "boolean",
                     "description": "input reads are derived from single-end library",
-                    "default": "false"
+                    "default": false
                 }
             },
             "required": [
