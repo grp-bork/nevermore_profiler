@@ -23,8 +23,8 @@
                 },
                 "remove_host_kraken2_db": {
                     "type": "string",
-                    "hidden": true,
                     "format": "directory-path",
+                    "hidden": true,
                     "description": "Path to a kraken2 database",
                     "default": "/vol/data/databases/clowm/CLDB-018fde8b0aa373a5ba7d3236bb921cc9/018fde8b0aac74889c57f7b1af5f87cb/hg38_silva_genome"
                 }
@@ -55,10 +55,11 @@
                     "type": "string",
                     "format": "directory-path",
                     "description": "Path to annotation database",
-                    "default": "/vol/data/databases/clowm/CLDB-019002ce2dc470b7954ada9cac392ba2/01900c56511972c3abd08b34b10583b6"
+                    "hidden": true,
+                    "default": "/vol/data/databases/clowm/CLDB-019002ce2dc470b7954ada9cac392ba2/019002ce2dcb72eb841b786f3c95938d"
                 },
                 "min_identity": {
-                    "type": "float",
+                    "type": "number",
                     "description": "minimum sequence identity for alignment to be considered",
                     "default": 0.97                   
                 },
@@ -70,13 +71,15 @@
                 "single_end_library": {
                     "type": "boolean",
                     "description": "input reads are derived from single-end library",
-                    "default": "false"
+                    "default": false
                 }
             },
             "required": [
                 "input_dir",
                 "output_dir",
-				"database"
+				"gq_database",
+                "min_identity",
+                "min_alignment_length"
             ]
         }
     },
@@ -94,13 +97,17 @@
             "default": true
         },
         "remove_host": {
-            "type": "boolean"
+            "type": "boolean",
+            "default": true
         },
         "drop_orphans": {
-            "type": "boolean"
+            "type": "boolean",
+            "hidden": true,
+            "default": false
         },
         "kraken2_min_hit_groups": {
             "type": "integer",
+            "hidden": true,
             "default": 10
         }
     }
