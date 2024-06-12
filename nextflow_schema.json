@@ -26,7 +26,7 @@
                     "hidden": true,
                     "format": "directory-path",
                     "description": "Path to a kraken2 database",
-                    "default": ""
+                    "default": "/vol/data/databases/clowm/CLDB-018fde8b0aa373a5ba7d3236bb921cc9/018fde8b0aac74889c57f7b1af5f87cb/hg38_silva_genome"
                 }
             },
             "required": [
@@ -55,7 +55,7 @@
                     "type": "string",
                     "format": "directory-path",
                     "description": "Path to annotation database",
-                    "default": "/vol/data/databases/clowm/CLDB-019002ce2dc470b7954ada9cac392ba2/019002ce2dcb72eb841b786f3c95938d"
+                    "default": "/vol/data/databases/clowm/CLDB-019002ce2dc470b7954ada9cac392ba2/01900c56511972c3abd08b34b10583b6"
                 },
                 "min_identity": {
                     "type": "float",
