@@ -22,7 +22,9 @@
                     "default": "qtrim=rl trimq=3 maq=25 ktrim=r k=23 mink=11 hdist=1 ftm=5 entropy=0.5 entropywindow=50 entropyk=5 tpe tbo"
                 },
                 "remove_host_kraken2_db": {
-                    "type": "boolean",
+                    "type": "string",
+                    "hidden": true,
+                    "default": "/vol/data/databases/clowm/CLDB-018fde8b0aa373a5ba7d3236bb921cc9/018fde8b0aac74889c57f7b1af5f87cb",
                     "description": "Path to a kraken2 database"
                 }
             },
@@ -67,7 +69,7 @@
                 "single_end_library": {
                     "type": "boolean",
                     "description": "input reads are derived from single-end library",
-                    "default": "false",
+                    "default": "false"
                 }
             },
             "required": [
