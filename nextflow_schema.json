@@ -104,7 +104,7 @@
         "drop_orphans": {
             "type": "boolean",
             "hidden": true,
-            "default": true
+            "default": false
         },
         "kraken2_min_hit_groups": {
             "type": "integer",
