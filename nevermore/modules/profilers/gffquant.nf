@@ -71,10 +71,10 @@ process stream_gffquant {
 			set -e -o pipefail
 			mkdir -p logs/ tmp/ profiles/
 			echo 'Copying database...'
-			cp -v ${gq_db}/*sqlite3 GQ_DATABASE
+			cp -v \$(dirname \$(readlink ${gq_db}))/*sqlite3 GQ_DATABASE
 
 
-			${gq_cmd} --reference ${gq_db} &> logs/${sample}.log
+			${gq_cmd} --reference \$(readlink ${gq_db}) &> logs/${sample}.log
 			rm -rfv GQ_DATABASE* tmp/
 			"""
 
