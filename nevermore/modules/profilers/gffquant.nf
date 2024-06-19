@@ -71,7 +71,7 @@ process stream_gffquant {
 			set -e -o pipefail
 			mkdir -p logs/ tmp/ profiles/
 			echo 'Copying database...'
-			cp -v ${gq_db}*sqlite3 GQ_DATABASE
+			cp -v ${gq_db}/*sqlite3 GQ_DATABASE
 
 
 			${gq_cmd} --reference ${gq_db} &> logs/${sample}.log
