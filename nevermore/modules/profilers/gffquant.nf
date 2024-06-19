@@ -3,9 +3,12 @@ params.gq_min_seqlen = params.min_alignment_length
 params.gq_single_end_library = params.single_end_library
 params.gq_min_identity = params.min_identity
 params.gq_mode = "genes"
+params.gq_ambig_mode = "1overN"
+
 
 process stream_gffquant {
 	label "gffquant"
+	label "process_high"
 	tag "gffquant.${sample}"
 
 	input:
@@ -62,15 +65,16 @@ process stream_gffquant {
 	
 			def gq_cmd = "gffquant ${gq_output} ${gq_params} --db GQ_DATABASE --aligner ${params.gq_aligner} ${input_files}"
 			// --reference \$(readlink ${reference})
+			// cp -v ${gq_db}/*sqlite3 GQ_DATABASE
+			// ref=\$(ls ${gq_db}/*.bwt | sed "s/\.bwt//")
 			"""
 			set -e -o pipefail
 			mkdir -p logs/ tmp/ profiles/
 			echo 'Copying database...'
-			cp -v ${gq_db}/*sqlite3 GQ_DATABASE
+			cp -v ${gq_db}*sqlite3 GQ_DATABASE
 
-			ref=\$(ls ${gq_db}/*.bwt | sed "s/\.bwt//")
 
-			${gq_cmd} --reference \$ref &> logs/${sample}.log
+			${gq_cmd} --reference ${gq_db} &> logs/${sample}.log
 			rm -rfv GQ_DATABASE* tmp/
 			"""
 
