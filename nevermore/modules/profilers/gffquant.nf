@@ -7,6 +7,7 @@ params.gq_ambig_mode = "1overN"
 
 
 process stream_gffquant {
+	publishDir params.output_dir, mode: "copy"
 	label "gffquant"
 	label "process_high"
 	tag "gffquant.${sample}"
@@ -81,6 +82,7 @@ process stream_gffquant {
 }
 
 process run_gffquant {
+	publishDir params.output_dir, mode: "copy"
 	label "gffquant"
 
 	input:
@@ -164,6 +166,7 @@ params.gq_collate_columns = "uniq_scaled,combined_scaled"
 // }
 
 process collate_feature_counts {
+	publishDir params.output_dir, mode: "copy"
 	label "collate_profiles"
 	label "gffquant"
 
