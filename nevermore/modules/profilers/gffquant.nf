@@ -9,7 +9,8 @@ params.gq_ambig_mode = "1overN"
 process stream_gffquant {
 	publishDir params.output_dir, mode: "copy"
 	label "gffquant"
-	label "process_high"
+	label "large"
+
 	tag "gffquant.${sample}"
 
 	input:
@@ -20,7 +21,7 @@ process stream_gffquant {
 		tuple val(sample), path("profiles/${sample}/*.{txt.gz,pd.txt}"), emit: results //, optional: (!params.gq_panda) ? true : false
 		tuple val(sample), path("profiles/${sample}/*.{txt.gz,pd.txt}"), emit: profiles //, optional: (params.gq_panda) ? true : false
 		tuple val(sample), path("logs/${sample}.log")
-		tuple val(sample), path("alignments/${sample}*.sam"), emit: alignments, optional: true
+		tuple val(sample), path("alignments/${sample}/${sample}*.sam"), emit: alignments, optional: true
 
 	script:
 			def gq_output = "-o profiles/${sample}/${sample}"
@@ -65,12 +66,14 @@ process stream_gffquant {
 			}
 	
 			def gq_cmd = "gffquant ${gq_output} ${gq_params} --db GQ_DATABASE --aligner ${params.gq_aligner} ${input_files}"
+			def mkdir_alignments = (params.keep_alignment_file != null && params.keep_alignment_file != false) ? "mkdir -p alignments/${sample}/" : ""
 			// --reference \$(readlink ${reference})
 			// cp -v ${gq_db}/*sqlite3 GQ_DATABASE
 			// ref=\$(ls ${gq_db}/*.bwt | sed "s/\.bwt//")
 			"""
 			set -e -o pipefail
 			mkdir -p logs/ tmp/ profiles/
+			${mkdir_alignments}
 			echo 'Copying database...'
 			cp -v \$(dirname \$(readlink ${gq_db}))/*sqlite3 GQ_DATABASE
 
@@ -148,22 +151,6 @@ process run_gffquant {
 }
 
 params.gq_collate_columns = "uniq_scaled,combined_scaled"
-
-// process collate_feature_counts {
-
-// 	input:
-// 	tuple val(sample), path(count_tables), val(column)
-
-// 	output:
-// 	path("collated/*.txt.gz"), emit: collated, optional: true
-
-// 	script:
-// 	"""
-// 	mkdir -p collated/
-
-// 	collate_counts . -o collated/collated -c ${column}
-// 	"""
-// }
 
 process collate_feature_counts {
 	publishDir params.output_dir, mode: "copy"
