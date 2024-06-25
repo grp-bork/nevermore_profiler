@@ -2,6 +2,9 @@ include { stream_gffquant; run_gffquant; collate_feature_counts } from "../modul
 
 params.gq_collate_columns = "uniq_scaled,combined_scaled"
 
+if (!params.gffquant_db) {
+	params.gffquant_db = params.gq_database
+}
 
 workflow gffquant_flow {
 
