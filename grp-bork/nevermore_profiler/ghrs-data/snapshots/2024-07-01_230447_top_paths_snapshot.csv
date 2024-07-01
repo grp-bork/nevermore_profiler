@@ -1,0 +1,11 @@
+url_path,views_total,views_unique
+/grp-bork/nevermore_profiler/commits/main,26,1
+/grp-bork/nevermore_profiler,20,3
+/grp-bork/nevermore_profiler/blob/main/nextflow.config,8,1
+/grp-bork/nevermore_profiler/blob/main/nextflow_schema.json,4,1
+/grp-bork/nevermore_profiler/tree/main/docs,3,1
+/grp-bork/nevermore_profiler/blob/main/docs/output.md,2,1
+/grp-bork/nevermore_profiler/blob/main/docs/usage.md,2,1
+/grp-bork/nevermore_profiler/blob/main/nevermore/workflows/gffquant.nf,2,1
+/grp-bork/nevermore_profiler/pull/1,2,1
+/grp-bork/nevermore_profiler/tree/main,2,1
