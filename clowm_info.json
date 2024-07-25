@@ -1,0 +1,19 @@
+{
+  "inputParameters": [
+    "input_dir"
+  ],
+  "outputParameters": [
+    "output_dir"
+  ],
+  "exampleParameters": {
+    "input_dir": "s3://example-data-nevermore_profiler/small/"
+  },
+  "dois": [
+    "10.1038/s41586-021-04233-4",
+    "10.1093/nar/gkac1078"
+  ],
+  "resourceParameters": [
+    "remove_host_kraken2_db",
+    "gq_database"
+  ]
+}
