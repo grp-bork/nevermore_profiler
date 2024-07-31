@@ -39,7 +39,7 @@ This workflow: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13143233.svg)
 ---
 # Overview
 ![nevermore_workflow](https://raw.githubusercontent.com/grp-bork/nevermore_profiler/main/docs/nevermore.svg)
-
+![profiler_workflow](https://raw.githubusercontent.com/grp-bork/nevermore_profiler/main/docs/profiler.svg)
 ---
 # Requirements
 
