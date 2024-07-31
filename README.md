@@ -43,6 +43,20 @@ This workflow: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13143233.svg)
 ---
 # Requirements
 
+The easiest way to handle dependencies is via Singularity/Docker containers. Alternatively, conda environments, software module systems or native installations can be used.
+
+## Preprocessing
+
+Preprocessing and QA is done with `bbmap`, `fastqc`, and `multiqc`.
+
+### Decontamination/Host removal
+
+Decontamination is done with `kraken2` and additionally requires `seqtk`. 
+
+#### Kraken2 database
+
+Host removal requires a `kraken2` host database.
+
 ---
 # Usage
 ## Cloud-based Workflow Manager (CloWM)
