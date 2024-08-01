@@ -80,6 +80,7 @@ Or, you can have nextflow pull it from github and run it from the `$HOME/.nextfl
 ```
 nextflow run grp-bork/nevermore_profiler [-resume] -c /path/to/run.config -params-file /path/to/params.yml
 ```
+
 ## Input files
 Fastq files are supported and can be either uncompressed (but shouldn't be!) or compressed with `gzip` or `bzip2`. Sample data must be arranged in one directory per sample.
 
