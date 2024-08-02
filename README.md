@@ -34,7 +34,7 @@ The `nevermore_profiler` is a workflow optimised for alignment-based, functional
 Input data sets are profiled with [gffquant](https://github.com/cschu/gff_quantifier). `gffquant` aligns the input reads using `BWA-mem` (or `minimap2` for larger catalogues) against a reference catalogue and distributes the resulting gene counts to functional categories obtained from `eggnog-mapper` annotations of the reference catalogue, generating readcount-based functional profiles. The nevermore profiler workflow, nevermore library, as well as the gffquant software were/are being developed in the Bork and Zeller labs at EMBL Heidelberg. In 2023, maintenance and development was supported by [NFDI4Microbiota](https://nfdi4microbiota.de/)
 
 #### Citation
-This workflow: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13143233.svg)](https://doi.org/10.5281/zenodo.13143233)
+This workflow: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13143232.svg)](https://doi.org/10.5281/zenodo.13143232)
 
 ---
 # Overview
