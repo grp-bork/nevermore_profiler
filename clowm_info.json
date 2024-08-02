@@ -9,7 +9,7 @@
     "input_dir": "s3://example-data-nevermore_profiler/small/"
   },
   "dois": [
-    "10.5281/zenodo.13143233",
+    "10.5281/zenodo.13143232",
     "10.1038/s41586-021-04233-4",
     "10.1093/nar/gkac1078"
   ],
