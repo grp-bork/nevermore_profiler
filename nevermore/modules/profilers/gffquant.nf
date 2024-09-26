@@ -78,7 +78,7 @@ process stream_gffquant {
 			cp -v \$(dirname \$(readlink ${gq_db}))/*sqlite3 GQ_DATABASE
 
 
-			${gq_cmd} --reference \$(readlink ${gq_db}) &> logs/${sample}.log
+			${gq_cmd} --reference \$(readlink ${gq_db}) | tee logs/${sample}.log
 			rm -rfv GQ_DATABASE* tmp/
 			"""
 
@@ -145,7 +145,7 @@ process run_gffquant {
 	echo 'Copying database...'
 	cp -v ${gq_db} gq_db.sqlite3
 	${mk_aln_sam}
-	${gq_cmd} &> logs/${sample}.log
+	${gq_cmd} | tee logs/${sample}.log
 	rm -rfv gq_db.sqlite3* tmp/
 	"""
 }
