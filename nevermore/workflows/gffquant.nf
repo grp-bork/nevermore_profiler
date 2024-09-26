@@ -6,6 +6,8 @@ if (!params.gffquant_db) {
 	params.gffquant_db = params.gq_database
 }
 
+params.gq_stream = true
+
 workflow gffquant_flow {
 
 	take:
