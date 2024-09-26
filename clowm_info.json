@@ -6,7 +6,7 @@
     "output_dir"
   ],
   "exampleParameters": {
-    "input_dir": "s3://example-data-nevermore_profiler/small/"
+    "input_dir": "s3://workflow-exampledata/nevermore_profiler/small/"
   },
   "dois": [
     "10.5281/zenodo.13143232",
