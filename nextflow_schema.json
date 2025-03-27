@@ -48,8 +48,9 @@
                 },
                 "input_dir_structure": {
                     "type": "string",
+                    "enum": ["flat", "tree"],
                     "description": "Are the input files stored at base-level of input directory ('flat') or as one subdirectory per sample ('tree')?",
-                    "default": "tree"
+                    "default": "flat"
                 },
                 "output_dir": {
                     "type": "string",
