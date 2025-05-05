@@ -1,0 +1,9 @@
+url_path,views_total,views_unique
+/grp-bork/nevermore_profiler,4,1
+/grp-bork/nevermore_profiler/tree/main,3,1
+/grp-bork/nevermore_profiler/tree/main/config,3,1
+/grp-bork/nevermore_profiler/blob/main/config/params.yml,2,1
+/grp-bork/nevermore_profiler/blob/72fa64b57ccf4804ed8839693b362f63b44f0335/docs/usage.md,1,1
+/grp-bork/nevermore_profiler/blob/main/main.nf,1,1
+/grp-bork/nevermore_profiler/blob/main/nextflow.config,1,1
+/grp-bork/nevermore_profiler/issues,1,1
