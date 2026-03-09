@@ -38,6 +38,8 @@ workflow {
 	
 	nevermore_main(fastq_ch)
 
+	nevermore_main.out.fastqs.dump(pretty: true, tag: "nvm_main")
+
 	gq_input_ch = nevermore_main.out.fastqs
 		.map { sample, fastqs ->
 		sample_id = sample.id.replaceAll(/.(orphans|singles|chimeras)$/, "")
