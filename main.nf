@@ -42,12 +42,11 @@ workflow {
 
 	gq_input_ch = nevermore_main.out.fastqs
 		.map { sample, fastqs ->
-		sample_id = sample.id.replaceAll(/.(orphans|singles|chimeras)$/, "")
-		return tuple(sample_id, [fastqs].flatten())
-	}
-	.groupTuple(size: 2, remainder: true)
-	.map { sample_id, fastqs -> return tuple(sample_id, [fastqs].flatten()) }
-	gq_input_ch.view()
+			sample_id = sample.id.replaceAll(/.(orphans|singles|chimeras)$/, "")
+			return tuple(sample_id, [fastqs].flatten())
+		}
+		.groupTuple(size: 2, remainder: true)
+		.map { sample_id, fastqs -> return tuple(sample_id, [fastqs].flatten()) }
 	
 	gffquant_flow(gq_input_ch)		
 

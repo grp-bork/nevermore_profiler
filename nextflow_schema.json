@@ -72,7 +72,7 @@
                     "description": "minimum length for alignment to be considered",
                     "default": 45
                 },
-                "single_end_library": {
+                "single_end_libraries": {
                     "type": "boolean",
                     "description": "input reads are derived from single-end library",
                     "default": false

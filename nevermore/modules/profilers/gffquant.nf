@@ -1,6 +1,6 @@
 params.gq_aligner = "bwa"
 params.gq_min_seqlen = params.min_alignment_length
-params.gq_single_end_library = params.single_end_library
+params.gq_single_end_library = params.single_end_libraries
 params.gq_min_identity = params.min_identity
 params.gq_mode = "genes"
 params.gq_ambig_mode = "1overN"

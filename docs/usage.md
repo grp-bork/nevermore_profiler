@@ -29,7 +29,7 @@ The initial clowm-deployment of `nevermore_profiler` includes the GMGC 1.0 human
 
 * `min_identity [0.97]`: Sequence identity cutoff for alignments to be considered as a match.
 * `min_alignment_length [45]`: Alignment length cutoff for alignments to be considered as a match.
-* `single_end_library [false]`: The count model assumes read pairs, assigning 0.5 counts to each mate. Unpaired input is by default treated as deriving from a paired-end library (i.e., as orphaned reads). Setting this parameter to true marks the input data set as single end, causing unpaired reads to receive a full count.
+* `single_end_libraries [false]`: The count model assumes read pairs, assigning 0.5 counts to each mate. Unpaired input is by default treated as deriving from a paired-end library (i.e., as orphaned reads). Setting this parameter to true marks the input data set as single end, causing unpaired reads to receive a full count.
 * `run_preprocessing [true]`: Run preprocessing (quality control, [human] host removal, rRNA removal.)
 * `remove_host [true]`: Run host removal.
 * `drop_orphans [false]`: Drop paired-end reads whose mate did not survive quality processing.
