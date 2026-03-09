@@ -15,6 +15,6 @@
   ],
   "resourceParameters": [
     "remove_host_kraken2_db",
-    "gq_database"
+    "gffquant_db"
   ]
 }

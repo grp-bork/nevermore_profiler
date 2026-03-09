@@ -25,8 +25,7 @@
                     "type": "string",
                     "format": "directory-path",
                     "hidden": true,
-                    "description": "Path to a kraken2 database",
-                    "default": "/vol/data/databases/clowm/CLDB-018fde8b0aa373a5ba7d3236bb921cc9/018fde8b0aac74889c57f7b1af5f87cb/hg38_silva_genome"
+                    "description": "Path to a kraken2 database"
                 }
             },
             "required": [
@@ -57,12 +56,11 @@
                     "format": "directory-path",
                     "description": "Path to output directory"
                 },
-                "gq_database": {
+                "gffquant_db": {
                     "type": "string",
                     "format": "directory-path",
                     "description": "Path to annotation database",
-                    "hidden": true,
-                    "default": "/vol/data/databases/clowm/CLDB-019002ce2dc470b7954ada9cac392ba2/01900c56511972c3abd08b34b10583b6/GMGC10.human-gut.95nr.0.5pv"
+                    "hidden": true
                 },
                 "min_identity": {
                     "type": "number",
@@ -83,7 +81,7 @@
             "required": [
                 "input_dir",
                 "output_dir",
-				"gq_database",
+				"gffquant_db",
                 "min_identity",
                 "min_alignment_length"
             ]

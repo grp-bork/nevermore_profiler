@@ -2,7 +2,7 @@
 
 ## CLI
 ```
-nextflow run /path/to/nevermore_profiler --input_dir </path/to/read_files> --output_dir </path/to/output_dir> --gq_database <path/to/database> [PARAMETERS]
+nextflow run /path/to/nevermore_profiler --input_dir </path/to/read_files> --output_dir </path/to/output_dir> --gffquant_db <path/to/database> [PARAMETERS]
 ```
 ## Input
 * Fastq files need to be ordered into a sample-per-folder structure (s. tree below).
