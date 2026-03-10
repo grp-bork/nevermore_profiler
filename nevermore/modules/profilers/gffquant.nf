@@ -76,9 +76,10 @@ process stream_gffquant {
 			${mkdir_alignments}
 			GQ_DATABASE=\$(dirname \$(readlink ${gq_db}))/*sqlite3
 
-			${gq_cmd} --reference \$(readlink ${gq_db}) &> logs/${sample}.log
+			${gq_cmd} --reference \$(readlink ${gq_db})
 			gzip -dc ${sample}/${sample}.gene_counts.txt.gz | cut -f 1 | gzip -c - > ${sample}/${sample}.gene_ids.txt.gz
 			rm -rfv tmp/
+			ln -s .command.log logs/${sample}.log
 			"""
 
 }
