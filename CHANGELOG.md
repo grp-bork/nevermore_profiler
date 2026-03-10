@@ -6,3 +6,4 @@ version -> 0.15.5
 - renamed gq_database parameter to gffquant_db
 - renamed single_end_library parameter to single_end_libraries
 - fix single_end_library routing
+- update gffquant to v2.18.5
