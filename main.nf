@@ -3,10 +3,8 @@
 nextflow.enable.dsl=2
 
 include { nevermore_main } from "./nevermore/workflows/nevermore"
-include { nevermore_align } from "./nevermore/workflows/align"
 include { gffquant_flow } from "./nevermore/workflows/gffquant"
 include { fastq_input } from "./nevermore/workflows/input"
-include { collate_stats } from "./nevermore/modules/collate"
 
 
 if (params.input_dir && params.remote_input_dir) {
@@ -31,8 +29,7 @@ params.ignore_dirs = ""
 workflow {
 
 	fastq_input(
-		// Channel.fromPath(input_dir + "/*", type: "dir")
-		Channel.fromPath(params.input_dir + "/**"),
+		Channel.fromPath(params.input_dir + "/**")
 			.filter { !params.ignore_dirs.split(",").contains(it.name) },
 		Channel.of(null)
 	)
@@ -41,15 +38,15 @@ workflow {
 	
 	nevermore_main(fastq_ch)
 
+	nevermore_main.out.fastqs.dump(pretty: true, tag: "nvm_main")
+
 	gq_input_ch = nevermore_main.out.fastqs
 		.map { sample, fastqs ->
-		sample_id = sample.id.replaceAll(/.(orphans|singles|chimeras)$/, "")
-		return tuple(sample_id, [fastqs].flatten())
-	}
-	.groupTuple()
-	.map { sample_id, fastqs -> return tuple(sample_id, [fastqs].flatten()) }
-	gq_input_ch.view()
-
+			sample_id = sample.id.replaceAll(/.(orphans|singles|chimeras)$/, "")
+			return tuple(sample_id, [fastqs].flatten())
+		}
+		.groupTuple(size: 2, remainder: true)
+		.map { sample_id, fastqs -> return tuple(sample_id, [fastqs].flatten()) }
 	
 	gffquant_flow(gq_input_ch)		
 
