@@ -1,0 +1,11 @@
+url_path,views_total,views_unique
+/grp-bork/nevermore_profiler,14,3
+/grp-bork/nevermore_profiler/pull/3/changes,5,1
+/grp-bork/nevermore_profiler/commits/main,3,1
+/grp-bork/nevermore_profiler/pull/3,3,1
+/grp-bork/nevermore_profiler/blob/main/nevermore/workflows/gffquant.nf,2,1
+/grp-bork/nevermore_profiler/issues,2,1
+/grp-bork/nevermore_profiler/tree/main/nevermore,2,1
+/grp-bork/nevermore_profiler/blob/main/LICENSE,1,1
+/grp-bork/nevermore_profiler/blob/main/bin/collate_stats.py,1,1
+/grp-bork/nevermore_profiler/blob/main/bin/create_samplesheet.py,1,1
