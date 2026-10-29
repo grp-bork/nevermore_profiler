@@ -1,3 +1,6 @@
+VERSION 0.15.12
+ - redirected git.embl.org container directives to ghcr.io
+
 version -> 0.15.5
 - update nevermore
   - fixed bug in kraken2 decon module
